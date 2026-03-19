@@ -10,6 +10,16 @@ export const getTasks = async (req, res) => {
   }
 };
 
+// 🟢 GET a task (protected)
+export const getTask = async (req, res) => {
+  try {
+    const task = await Task.findById(req.params.id);
+    res.json(task);
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
 // 🔵 CREATE task
 export const createTask = async (req, res) => {
   try {
