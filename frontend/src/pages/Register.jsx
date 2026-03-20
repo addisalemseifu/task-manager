@@ -22,7 +22,7 @@ export default function Register() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", user);
+      await axios.post("/api/auth/register", user);
 
       toast.success("Registered successfully");
       navigate("/login");
